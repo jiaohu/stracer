@@ -41,10 +41,3 @@ func (t *Tracer) Done() {
 	}
 }
 
-func (t *Tracer) DoneWithGas() {
-	if t.enabled {
-		now := time.Now()
-		log.Printf("%s : %s : Done [%s]", t.tag, t.id, now.Sub(t.start))
-		t.last = now
-	}
-}
